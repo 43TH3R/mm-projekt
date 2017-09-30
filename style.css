@@ -1,7 +1,13 @@
 body {
-	padding: 20px;
+	padding-top: 10px;
 }
 
-canvas {
+#canvas {
 	border: solid 1px black;
+	/*margin: 0 auto;*/
+	display: block;
+}
+
+#controls {
+	padding-top: 10px;
 }
