@@ -6,13 +6,15 @@ const canvasW = gridW * gridSize;
 const canvasH = gridH * gridSize;
 
 // initialization
-var canvas = document.getElementById("canvas");
+const canvas = document.getElementById("canvas");
 canvas.setAttribute("width", canvasW);
 canvas.setAttribute("height", canvasH);
-var c = canvas.getContext("2d");
+const c = canvas.getContext("2d");
 c.strokeStyle = "#000000";
+initGridPath();
 
-var boxes = [];
+// data structures
+const boxes = [];
 // var grid = [];
 // for (var i=0; i<gridW; i++) {
 // 	var row = [];
@@ -63,7 +65,7 @@ function initGridPath() {
 }
 
 function draw() {
-    c.clearRect(0, 0, canvasW, canvasH, 0.5);
+    c.clearRect(0, 0, canvasW, canvasH);
 	c.stroke();
     drawBoxes();
 }
@@ -74,7 +76,7 @@ function drawBoxes() {
         c.fillRect(box.x, box.y, box.w, box.h);
         c.fillStyle = "#ff0000";
         c.font="20px Arial";
-        var label = "" + (i+1);
+        const label = "" + (i+1);
         c.fillText(label, box.x + box.w/2 - c.measureText(label).width/2, box.y + box.h/2 + 7);
     });
 }
@@ -93,11 +95,7 @@ function mainLoop() {
 	draw();
 }
 
-addBox();
-addBox();
-addBox();
-addBox();
-
+// playback control
 var interval;
 var playing = false;
 
@@ -115,5 +113,10 @@ function stop() {
     }
 }
 
-initGridPath();
+// start
+addBox();
+addBox();
+addBox();
+addBox();
+
 start();
