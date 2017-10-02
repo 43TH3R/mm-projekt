@@ -50,22 +50,21 @@ function addBox() {
 //     }
 // }
 
-function drawGrid() {
+function initGridPath() {
+	c.beginPath();
 	for (var i=1; i<gridH; i++) {
 		c.moveTo(0, i*gridSize);
 		c.lineTo(canvasW, i*gridSize);
-		c.stroke();
 	}
 	for (var i=1; i<gridW; i++) {
 		c.moveTo(i*gridSize, 0);
 		c.lineTo(i*gridSize, canvasH);
-		c.stroke();
 	}
 }
 
 function draw() {
     c.clearRect(0, 0, canvasW, canvasH, 0.5);
-	// drawGrid();
+	c.stroke();
     drawBoxes();
 }
 
@@ -112,10 +111,9 @@ function start() {
 function stop() {
     if (playing) {
         clearInterval(interval);
-        drawGrid();
-        drawBoxes();
         playing = false;
     }
 }
 
+initGridPath();
 start();
