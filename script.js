@@ -4,6 +4,7 @@ const gridW = 8;
 const gridH = 6;
 const canvasW = gridW * gridSize;
 const canvasH = gridH * gridSize;
+const density = 0.00001;
 
 // initialization
 const canvas = document.getElementById("canvas");
@@ -27,6 +28,8 @@ function addBox() {
 	newH = Math.random()*70 + 30;
 	newX = Math.random()*(canvasW - newW);
 	newY = Math.random()*(canvasH - newH);
+	// newVx = 0;
+	// newVy = 0;
 	newVx = Math.random()*10 - 5;
 	newVy = Math.random()*10 - 5;
 	boxes.push({x: newX, y: newY, w: newW, h: newH, vx: newVx, vy: newVy});
@@ -85,6 +88,7 @@ function move() {
 	boxes.forEach(function(box) {
 		if (box.x + box.vx < 0 || box.x + box.w + box.vx > canvasW) box.vx = -box.vx;
 		if (box.y + box.vy < 0 || box.y + box.h + box.vy > canvasH) box.vy = -box.vy;
+		else box.vy = box.vy + box.w*box.h*density; 
 		box.x = box.x + box.vx;
 		box.y = box.y + box.vy;
 	});
@@ -110,6 +114,12 @@ function stop() {
     if (playing) {
         clearInterval(interval);
         playing = false;
+    }
+}
+
+function step() {
+	if (!playing) {
+        mainLoop();
     }
 }
 
