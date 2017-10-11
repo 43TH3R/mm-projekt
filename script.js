@@ -7,6 +7,9 @@ const canvasH = gridH * gridSize;
 const density = 0.00001;
 
 // initialization
+const playButton = document.getElementById("playButton");
+const stopButton = document.getElementById("stopButton");
+const stepButton = document.getElementById("stepButton");
 const canvas = document.getElementById("canvas");
 canvas.setAttribute("width", canvasW);
 canvas.setAttribute("height", canvasH);
