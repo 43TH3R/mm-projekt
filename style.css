@@ -6,6 +6,7 @@ body {
 	border: solid 1px black;
 	/*margin: 0 auto;*/
 	display: block;
+	height: 85vh;
 }
 
 #controls {

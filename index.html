@@ -8,13 +8,18 @@
 
     <body>
         <div class="container-fluid">
-			<div class="row">
-				<div class="col-12 text-center">
-					<button type="button" class="btn btn-outline-dark" onclick="addBox()">Add box</button>
-					<button type="button" class="btn btn-outline-dark" onclick="alert('remove box')">Remove box</button>
-					<button type="button" id="playButton" class="btn btn-outline-dark" onclick="start()">Play</button>
-					<button type="button" id="stopButton" class="btn btn-outline-dark" onclick="stop()">Pause</button>
-					<button type="button" id="stepButton" class="btn btn-outline-dark" onclick="step()">Step</button>
+			<div class="row justify-content-center">
+                <button type="button" class="btn btn-outline-dark" onclick="addBox()">Add box</button>
+                <div class="input-group col-2">
+                    <input type="number" class="form-control" id="removeId">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-outline-dark" onclick="removeBox()">Remove box</button>
+                    </span>
+                </div>
+                <div class="btn-group">
+                <button type="button" id="playButton" class="btn btn-outline-dark" onclick="start()">Play</button>
+                <button type="button" id="stopButton" class="btn btn-outline-dark" onclick="stop()">Pause</button>
+                <button type="button" id="stepButton" class="btn btn-outline-dark" onclick="step()">Step</button>
                 </div>
 			</div>
 			<br>
