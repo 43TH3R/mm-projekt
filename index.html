@@ -8,63 +8,19 @@
 
     <body>
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-8">
-                    <canvas id="canvas" class="ml-auto"></canvas>
+			<div class="row">
+				<div class="col-12 text-center">
+					<button type="button" class="btn btn-outline-dark" onclick="addBox()">Add box</button>
+					<button type="button" class="btn btn-outline-dark" onclick="alert('remove box')">Remove box</button>
+					<button type="button" id="playButton" class="btn btn-outline-dark" onclick="start()">Play</button>
+					<button type="button" id="stopButton" class="btn btn-outline-dark" onclick="stop()">Pause</button>
+					<button type="button" id="stepButton" class="btn btn-outline-dark" onclick="step()">Step</button>
                 </div>
-                <div class="col-4">
-                    <div class="card mb-2">
-                        <div class="card-body">
-                            <h5 class="card-title">Add box</h5>
-                            <button type="button" class="btn btn-outline-dark" onclick="addBox()">Random box</button>
-                            <button type="button" class="btn btn-outline-dark" data-toggle="collapse" data-target="#addCustomBox">Custom box</button>
-                            <div class="collapse" id="addCustomBox">
-                                <div class="row">
-                                    <label class="col-3">
-                                        x
-                                        <input type="number" class="form-control">
-                                    </label>
-                                    <label class="col-3">
-                                        y
-                                        <input type="number" class="form-control">
-                                    </label>
-                                    <label class="col-3">
-                                        w
-                                        <input type="number" class="form-control">
-                                    </label>
-                                    <label class="col-3">
-                                        h
-                                        <input type="number" class="form-control">
-                                    </label>
-                                </div>
-                                <div class="row">
-                                    <label class="col-3">
-                                        vx
-                                        <input type="number" class="form-control">
-                                    </label>
-                                    <label class="col-3">
-                                        vy
-                                        <input type="number" class="form-control">
-                                    </label>
-                                </div>
-                                <button type="button" class="btn btn-outline-dark float-right" onclick="alert('custom box')">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-2">
-                        <div class="card-body">
-                            <h5 class="card-title">Remove box</h5>
-                            <button type="button" class="btn btn-outline-dark" onclick="alert('remove box')">Remove box</button>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Controls</h5>
-                            <button type="button" id="playButton" class="btn btn-outline-dark" onclick="start()">Play</button>
-                            <button type="button" id="stopButton" class="btn btn-outline-dark" onclick="stop()">Pause</button>
-                            <button type="button" id="stepButton" class="btn btn-outline-dark" onclick="step()">Step</button>
-                        </div>
-                    </div>
+			</div>
+			<br>
+            <div class="row">
+                <div class="col-12">
+                    <canvas id="canvas" class="w-100"></canvas>
                 </div>
             </div>
         </div>
