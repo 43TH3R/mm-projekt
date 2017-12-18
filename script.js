@@ -342,4 +342,4 @@ addBox();
 addBox();
 addBox();
 
-// start();
+start();
