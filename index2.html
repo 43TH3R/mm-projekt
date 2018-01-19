@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF8">
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Uniform Grid and Pair Management</title>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <canvas id="canvas" class="w-100"></canvas>
+                </div>
+            </div>
+            <br>
+            <div class="row justify-content-center">
+                <button type="button" class="btn btn-outline-dark" onclick="addBox()">Add box</button>
+                <div class="input-group col-2">
+                    <input type="number" class="form-control" id="removeId">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-outline-dark" onclick="removeBox()">Remove box</button>
+                    </span>
+                </div>
+                <div class="btn-group">
+                    <button type="button" id="playButton" class="btn btn-outline-dark" onclick="start()">Play</button>
+                    <button type="button" id="stopButton" class="btn btn-outline-dark" onclick="stop()">Pause</button>
+                    <button type="button" id="stepButton" class="btn btn-outline-dark" onclick="step()">Step</button>
+                </div>
+            </div>
+            <p>Frame time: <code id="frametime"></code> ms<br>
+                Average: <code id="frametime-ma"></code> ms</p>
+            <p>Broad-phase collisions:</p>
+            <pre id="collisions"></pre>
+        </div>
+	</body>
+
+	<script src="script2.js"></script>
+</html>
