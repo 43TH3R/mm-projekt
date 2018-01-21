@@ -10,31 +10,49 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12">
+                <div class="col-9">
                     <canvas id="canvas" class="w-100"></canvas>
+                </div>
+                <div class="col-3">
+                    <p>Frame time: <code id="frametime"></code> ms<br>
+                    Average: <code id="frametime-ma"></code> ms</p>
+                    <p>Broad-phase collisions:</p>
+                    <div id="col-list">
+                        <pre id="collisions"></pre>
+                    </div>
                 </div>
             </div>
             <br>
-            <div class="row justify-content-center">
-                <button type="button" class="btn btn-outline-dark" onclick="addBox()">Add box</button>
-                <div class="input-group col-2">
-                    <input type="number" class="form-control" id="removeId">
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-outline-dark" onclick="removeBox()">Remove box</button>
-                    </span>
-                </div>
-                <div class="btn-group">
-                    <button type="button" id="playButton" class="btn btn-outline-dark" onclick="start()">Play</button>
-                    <button type="button" id="stopButton" class="btn btn-outline-dark" onclick="stop()">Pause</button>
-                    <button type="button" id="stepButton" class="btn btn-outline-dark" onclick="step()">Step</button>
+            <div class="col-9">
+                <div class="row justify-content-center">
+                    <button type="button" class="btn btn-outline-dark" onclick="addBox()">Add box</button>
+                    <div class="input-group col-3">
+                        <input type="number" class="form-control" id="removeId">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-outline-dark" onclick="removeBox()">Remove box</button>
+                        </span>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" id="playButton" class="btn btn-outline-dark" onclick="start()">Play</button>
+                        <button type="button" id="stopButton" class="btn btn-outline-dark" onclick="stop()">Pause</button>
+                        <button type="button" id="stepButton" class="btn btn-outline-dark" onclick="step()">Step</button>
+                    </div>
+                    <div class="form-inline" id="methodSwitch">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" name="method" id="method1" value="matrix" onchange="changeMode()" checked disabled>
+                            <label class="form-check-label" for="method1">Full matrix</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" name="method" id="method2" value="hash" onchange="changeMode()" disabled>
+                            <label class="form-check-label" for="method2">Spatial hashing</label>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <p>Frame time: <code id="frametime"></code> ms<br>
-                Average: <code id="frametime-ma"></code> ms</p>
-            <p>Broad-phase collisions:</p>
-            <pre id="collisions"></pre>
         </div>
 	</body>
 
+    <script src="matrix.js"></script>
+    <script src="hash.js"></script>
 	<script src="script.js"></script>
 </html>

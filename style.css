@@ -12,3 +12,12 @@ body {
 #controls {
 	padding-top: 10px;
 }
+
+#methodSwitch {
+	padding-left: 10px;
+}
+
+#col-list {
+	height: 65vh;
+	overflow: auto;
+}
